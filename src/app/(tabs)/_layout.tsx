@@ -1,13 +1,17 @@
 import { Tabs } from "expo-router";
-import { Bell, House, MagnifyingGlass, User } from "phosphor-react-native";
+import {
+  Bell,
+  House,
+  MagnifyingGlass,
+  User,
+  Video,
+} from "phosphor-react-native";
 const TabsLayout = () => {
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-        // tabBarInactiveTintColor: "gray",
-        // tabBarActiveTintColor: "white",
       }}
     >
       <Tabs.Screen
@@ -16,6 +20,19 @@ const TabsLayout = () => {
           title: "Home",
           tabBarIcon: ({ color, size, focused }) => (
             <House
+              color={color}
+              size={size}
+              weight={focused ? "fill" : "regular"}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="spins"
+        options={{
+          title: "Spins",
+          tabBarIcon: ({ color, size, focused }) => (
+            <Video
               color={color}
               size={size}
               weight={focused ? "fill" : "regular"}
