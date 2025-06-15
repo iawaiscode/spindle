@@ -12,6 +12,10 @@ const TabsLayout = () => {
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
+        tabBarStyle: {
+          borderTopWidth: 0,
+          paddingTop: 5,
+        },
       }}
     >
       <Tabs.Screen

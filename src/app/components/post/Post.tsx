@@ -7,7 +7,7 @@ import PostFooter from "./PostFooter";
 import PostHeader from "./PostHeader";
 
 const Post = ({ item: post }: { item: PostProps }) => {
-  const { title, body, reactions, userId } = post;
+  const { body, reactions, userId } = post;
   const { data: user } = useUsers(userId);
   const isReplied = false;
   const isLiked = false;
@@ -21,11 +21,7 @@ const Post = ({ item: post }: { item: PostProps }) => {
         </View>
         <View className="flex-1">
           <PostHeader username={user?.username} timestamp={"1h ago"} />
-          <PostBody
-            title={title}
-            body={body}
-            image={"https://picsum.photos/200/300"}
-          />
+          <PostBody body={body} image={"https://picsum.photos/200/300"} />
           <PostFooter
             isReplied={isReplied}
             isLiked={isLiked}
