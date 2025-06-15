@@ -1,6 +1,9 @@
 # 🧵 Spindle
 
-Spindle is a modern Threads app clone built using React Native and Expo. It focuses on real-time social interactions, sleek UI, and smooth performance across iOS and Android.
+**Spin thoughts into threads.**
+_A minimal, real-time micro-social app built for meaningful interactions._
+
+Spindle is a sleek and focused micro-social experience built with React Native and Expo. It enables users to post, reply, and interact in real-time, with a clean interface and smooth performance. No clutter, no noise—just spontaneous conversation.
 
 ---
 
@@ -28,10 +31,6 @@ Spindle is a modern Threads app clone built using React Native and Expo. It focu
 
 ---
 
-## 📦 Installation
+## 🙏 Acknowledgements
 
-```bash
-git clone https://github.com/yourusername/spindle.git
-cd spindle
-npm install
-```
+Inspired by modern micro-social platforms. Built with ❤️ using open-source tools like React Native, Supabase, and Expo.
