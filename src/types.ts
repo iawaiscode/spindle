@@ -5,7 +5,9 @@ export interface Children {
 export type User = {
   id: string;
   username: string;
-  name: string;
+  firstName: string;
+  lastName: string;
+  age: number;
   bio: string;
   email: string;
   image: string;
@@ -13,6 +15,7 @@ export type User = {
 
 export type Post = {
   id: string;
+  title: string;
   content: string;
   createdAt: string;
   updatedAt: string;

@@ -6,10 +6,14 @@ import {
   useFonts,
 } from "@expo-google-fonts/lato";
 import { DarkTheme, ThemeProvider } from "@react-navigation/native";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SplashScreen, Stack } from "expo-router";
 import { useEffect } from "react";
 import { StatusBar } from "react-native";
+
 import "../global.css";
+
+const queryClient = new QueryClient();
 
 SplashScreen.preventAutoHideAsync();
 
@@ -39,10 +43,12 @@ const RootLayout = () => {
   };
 
   return (
-    <ThemeProvider value={MyTheme}>
-      <Stack />
-      <StatusBar barStyle="light-content" />
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider value={MyTheme}>
+        <Stack />
+        <StatusBar barStyle="light-content" />
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 };
 export default RootLayout;
