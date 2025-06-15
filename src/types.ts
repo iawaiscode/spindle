@@ -2,7 +2,7 @@ export interface Children {
   children: React.ReactNode;
   className?: string;
 }
-export type User = {
+export type UserProps = {
   id: string;
   username: string;
   firstName: string;
@@ -13,18 +13,14 @@ export type User = {
   image: string;
 };
 
-export type Post = {
+export type PostProps = {
   id: string;
   title: string;
-  content: string;
-  createdAt: string;
-  updatedAt: string;
-  authorId: string;
-  author: User;
-  replies?: Post[];
-  likes: number;
-  _count: {
-    replies: number;
+  body: string;
+  userId: string;
+
+  reactions: {
+    dislikes: number;
     likes: number;
   };
 };

@@ -45,7 +45,7 @@ const RootLayout = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider value={MyTheme}>
-        <Stack />
+        <Stack screenOptions={{ headerShown: false }} />
         <StatusBar barStyle="light-content" />
       </ThemeProvider>
     </QueryClientProvider>

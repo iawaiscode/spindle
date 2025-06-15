@@ -1,22 +1,28 @@
-import { useUsers } from "@/Hooks/useUsers";
-import { Text, View } from "react-native";
+import { usePosts } from "@/Hooks/usePosts";
+import { Sphere } from "phosphor-react-native";
+import { FlatList, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import Post from "../components/post/Post";
 
-const Home = () => {
-  const { data } = useUsers();
+const Feed = () => {
+  const { data } = usePosts();
 
-  const users = data?.map((user) => (
-    <View key={user.id}>
-      <Text className="text-red-300">{user.firstName}</Text>
+  const Header = () => (
+    <View className="flex-row justify-center items-center mb-5">
+      <Sphere size={35} color="white" />
     </View>
-  ));
+  );
 
   return (
-    <View>
-      <Text className="text-3xl text-blue-300">Hello, world!</Text>
-      <Text className="text-3xl text-red-300">Hello, world!</Text>
-      {users}
-    </View>
+    <SafeAreaView>
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        ListHeaderComponent={Header}
+        data={data}
+        renderItem={({ item }) => <Post item={item} />}
+      />
+    </SafeAreaView>
   );
 };
 
-export default Home;
+export default Feed;
