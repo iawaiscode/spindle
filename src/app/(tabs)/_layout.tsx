@@ -1,12 +1,16 @@
 import { Tabs } from "expo-router";
 import {
-  Bell,
+  Handbag,
   House,
   MagnifyingGlass,
   User,
   Video,
 } from "phosphor-react-native";
+import { Text, View } from "react-native";
+
 const TabsLayout = () => {
+  //Bottom Tabs: Home , Spins , Search , Store , Profile
+
   return (
     <Tabs
       screenOptions={{
@@ -58,24 +62,29 @@ const TabsLayout = () => {
         }}
       />
       <Tabs.Screen
+        name="store"
+        options={{
+          title: "Store",
+          tabBarIcon: ({ color, size, focused }) => (
+            <View className="relative">
+              <View className="absolute -top-2 -right-2 bg-green-500 rounded-full w-4 h-4 flex items-center justify-center">
+                <Text className="text-white text-xs font-bold">1</Text>
+              </View>
+              <Handbag
+                color={color}
+                size={size}
+                weight={focused ? "fill" : "regular"}
+              />
+            </View>
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="profile"
         options={{
           title: "Profile",
           tabBarIcon: ({ color, size, focused }) => (
             <User
-              color={color}
-              size={size}
-              weight={focused ? "fill" : "regular"}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="notifications"
-        options={{
-          title: "Notifications",
-          tabBarIcon: ({ color, size, focused }) => (
-            <Bell
               color={color}
               size={size}
               weight={focused ? "fill" : "regular"}

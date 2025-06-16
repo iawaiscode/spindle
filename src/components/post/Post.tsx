@@ -1,12 +1,12 @@
 import { useUsers } from "@/Hooks/useUsers";
 import { PostProps } from "@/types";
 import { View } from "react-native";
-import Avatar from "./Avatar";
-import PostBody from "./PostBody";
-import PostFooter from "./PostFooter";
-import PostHeader from "./PostHeader";
+import { Avatar } from "../Avatar";
+import { PostBody } from "./PostBody";
+import { PostFooter } from "./PostFooter";
+import { PostHeader } from "./PostHeader";
 
-const Post = ({ item: post }: { item: PostProps }) => {
+export const Post = ({ item: post }: { item: PostProps }) => {
   const { body, reactions, userId } = post;
   const { data: user } = useUsers(userId);
   const isReplied = false;
@@ -33,5 +33,3 @@ const Post = ({ item: post }: { item: PostProps }) => {
     </View>
   );
 };
-
-export default Post;

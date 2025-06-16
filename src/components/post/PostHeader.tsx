@@ -1,7 +1,7 @@
 import { DotsThree } from "phosphor-react-native";
 import { Text, TouchableOpacity, View } from "react-native";
 
-const PostHeader = ({
+export const PostHeader = ({
   username,
   timestamp,
 }: {
@@ -25,5 +25,3 @@ const PostHeader = ({
     </View>
   );
 };
-
-export default PostHeader;

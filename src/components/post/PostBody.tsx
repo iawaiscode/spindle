@@ -1,6 +1,6 @@
 import { Image, Text, View } from "react-native";
 
-const PostBody = ({ body, image }: { body: string; image: string }) => {
+export const PostBody = ({ body, image }: { body: string; image: string }) => {
   return (
     <View>
       <Text className="text-gray-200 mb-4">{body}</Text>
@@ -13,5 +13,3 @@ const PostBody = ({ body, image }: { body: string; image: string }) => {
     </View>
   );
 };
-
-export default PostBody;

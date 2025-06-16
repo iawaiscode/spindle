@@ -1,7 +1,7 @@
 import { ChatTeardropDots, Heart, Share } from "phosphor-react-native";
 import { Text, TouchableOpacity, View } from "react-native";
 
-const PostFooter = ({
+export const PostFooter = ({
   isReplied,
   isLiked,
   isShared,
@@ -41,5 +41,3 @@ const PostFooter = ({
     </View>
   );
 };
-
-export default PostFooter;
