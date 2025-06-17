@@ -11,7 +11,7 @@ export const PostHeader = ({
   return (
     <View className="flex-row justify-between items-center mb-2">
       <View className="flex-row items-center gap-2">
-        <Text className="text-white font-bold text-base">{username}</Text>
+        <Text className="text-white/90 font-bold text-base">{username}</Text>
         <Text className="text-gray-400 text-sm">
           {
             // Placeholder for timestamp

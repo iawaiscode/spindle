@@ -25,7 +25,7 @@ export const PostFooter = ({
       <TouchableOpacity className="flex-row items-center gap-2 p-2">
         <Heart
           size={20}
-          color={isLiked ? "#ff0000" : "#6e798c"}
+          color={isLiked ? "#e30909" : "#6e798c"}
           weight={isLiked ? "fill" : "regular"}
         />
         <Text className="text-gray-400 text-sm">{reactions.likes}</Text>

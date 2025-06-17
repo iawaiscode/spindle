@@ -9,8 +9,6 @@ import {
 import { Text, View } from "react-native";
 
 const TabsLayout = () => {
-  //Bottom Tabs: Home , Spins , Search , Store , Profile
-
   return (
     <Tabs
       screenOptions={{
@@ -23,7 +21,7 @@ const TabsLayout = () => {
       }}
     >
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
           title: "Home",
           tabBarIcon: ({ color, size, focused }) => (

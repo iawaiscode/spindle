@@ -14,20 +14,22 @@ export const Post = ({ item: post }: { item: PostProps }) => {
   const isShared = false;
 
   return (
-    <View className="bg-black/50 p-4 border-t border-gray-700">
-      <View className="flex-row items-start">
-        <View className="mr-4">
-          <Avatar image={user?.image} />
-        </View>
-        <View className="flex-1">
-          <PostHeader username={user?.username} timestamp={"1h ago"} />
-          <PostBody body={body} image={"https://picsum.photos/200/300"} />
-          <PostFooter
-            isReplied={isReplied}
-            isLiked={isLiked}
-            isShared={isShared}
-            reactions={reactions}
-          />
+    <View className={"p-2"}>
+      <View className="bg-gray-900/90 p-2 rounded-lg">
+        <View className="flex-row items-start">
+          <View className="mr-4">
+            <Avatar image={user?.image} />
+          </View>
+          <View className="flex-1">
+            <PostHeader username={user?.username} timestamp={"1h ago"} />
+            <PostBody body={body} image={"https://picsum.photos/200"} />
+            <PostFooter
+              isReplied={isReplied}
+              isLiked={isLiked}
+              isShared={isShared}
+              reactions={reactions}
+            />
+          </View>
         </View>
       </View>
     </View>

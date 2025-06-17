@@ -9,9 +9,9 @@ import { DarkTheme, ThemeProvider } from "@react-navigation/native";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SplashScreen, Stack } from "expo-router";
 import { useEffect } from "react";
-import { StatusBar } from "react-native";
 
 import "../global.css";
+import { StatusBar } from "expo-status-bar";
 
 const queryClient = new QueryClient();
 
@@ -46,7 +46,7 @@ const RootLayout = () => {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider value={MyTheme}>
         <Stack screenOptions={{ headerShown: false }} />
-        <StatusBar barStyle="light-content" />
+        <StatusBar hidden />
       </ThemeProvider>
     </QueryClientProvider>
   );

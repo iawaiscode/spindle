@@ -6,10 +6,18 @@ import {
   Video,
 } from "phosphor-react-native";
 import { useState } from "react";
-import { Image, TextInput, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  Pressable,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 const FeedAddPost = () => {
   const [postText, setPostText] = useState("");
+  const [inputFocused, setInputFocused] = useState(false);
   const [image, setImage] = useState<string | null>(null);
 
   const handleTextChange = (text: string) => {
@@ -37,12 +45,14 @@ const FeedAddPost = () => {
   const handleSubmit = () => {};
 
   return (
-    <View className={"p-4 "}>
-      <View className="flex-1 bg-gray-800 rounded-lg">
+    <View className={"px-2"}>
+      <View className="flex-1 bg-gray-800/90 rounded-lg">
         {/* Post text input container */}
-        <View className="p-4">
+        <View className="p-4 flex-row justify-between">
           <TextInput
-            className="text-lg text-white"
+            onFocus={() => setInputFocused(true)}
+            onBlur={() => setInputFocused(false)}
+            className="text-lg text-white/90 font-regular"
             placeholder="What's on your mind?"
             value={postText}
             onChangeText={handleTextChange}
@@ -52,6 +62,16 @@ const FeedAddPost = () => {
             textAlign="left"
             maxLength={280}
           />
+          {postText.length > 0 || image ? (
+            <Pressable
+              onPress={() => {
+                setPostText("");
+                setImage(null);
+              }}
+            >
+              <Text className="text-blue-500 font-bold">cancel</Text>
+            </Pressable>
+          ) : null}
         </View>
 
         {/* // Image preview container */}
@@ -84,7 +104,11 @@ const FeedAddPost = () => {
 
           {/* Post button */}
           <TouchableOpacity className="p-4" onPress={handleSubmit}>
-            <PaperPlaneTilt size={20} color="#3b82f6" />
+            {/*#3b82f6*/}
+            <PaperPlaneTilt
+              size={20}
+              color={postText.length > 0 || image ? "#3b82f6" : "#6e798c"}
+            />
           </TouchableOpacity>
         </View>
       </View>
