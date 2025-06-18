@@ -1,7 +1,6 @@
 import { Stack, useRouter } from "expo-router";
 import { TouchableOpacity } from "react-native";
-import { CaretLeft } from "phosphor-react-native";
-import { Avatar } from "../../components/Avatar";
+import { CaretLeft, DotsThreeVertical } from "phosphor-react-native";
 
 const ScreensLayout = () => {
   const router = useRouter();
@@ -15,16 +14,35 @@ const ScreensLayout = () => {
           headerTitleStyle: {
             fontFamily: "Lato_700Bold",
           },
-          headerStyle: {
-            backgroundColor: "#000",
-          },
           headerShadowVisible: false,
           headerLeft: () => (
             <TouchableOpacity onPress={() => router.back()}>
               <CaretLeft size={24} color="white" />
             </TouchableOpacity>
           ),
-          headerRight: () => <Avatar image={"https://picsum.photos/200/300"} />,
+          headerRight: () => (
+            <TouchableOpacity>
+              <DotsThreeVertical size={24} color="white" weight={"bold"} />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="chat"
+        options={{
+          headerShown: true,
+          title: "Messages",
+          headerShadowVisible: false,
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => router.back()}>
+              <CaretLeft size={24} color="white" />
+            </TouchableOpacity>
+          ),
+          headerRight: () => (
+            <TouchableOpacity>
+              <DotsThreeVertical size={24} color="white" weight={"bold"} />
+            </TouchableOpacity>
+          ),
         }}
       />
     </Stack>

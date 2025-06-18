@@ -20,7 +20,7 @@ export const PostFooter = ({
           color={isReplied ? "#fff" : "#6e798c"}
           weight={isReplied ? "fill" : "regular"}
         />
-        <Text className="text-gray-400 text-sm">Reply</Text>
+        <Text className="text-primary text-sm font-bold">Reply</Text>
       </TouchableOpacity>
       <TouchableOpacity className="flex-row items-center gap-2 p-2">
         <Heart
@@ -28,7 +28,9 @@ export const PostFooter = ({
           color={isLiked ? "#e30909" : "#6e798c"}
           weight={isLiked ? "fill" : "regular"}
         />
-        <Text className="text-gray-400 text-sm">{reactions.likes}</Text>
+        <Text className="text-primary text-sm font-bold">
+          {reactions.likes}
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity className="flex-row items-center gap-2 p-2">
         <Share
@@ -36,7 +38,7 @@ export const PostFooter = ({
           color={isShared ? "#fff" : "#6e798c"}
           weight={isShared ? "fill" : "regular"}
         />
-        <Text className="text-gray-400 text-sm">Share</Text>
+        <Text className="text-primary text-sm font-bold">Share</Text>
       </TouchableOpacity>
     </View>
   );

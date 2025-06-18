@@ -12,15 +12,15 @@ export const PostHeader = ({
     <View className="flex-row justify-between items-center mb-2">
       <View className="flex-row items-center gap-2">
         <Text className="text-white/90 font-bold text-base">{username}</Text>
-        <Text className="text-gray-400 text-sm">
+        <Text className="text-primary text-sm font-bold">
           {
             // Placeholder for timestamp
             timestamp
           }
         </Text>
       </View>
-      <TouchableOpacity className="p-2 rounded-full bg-gray-700/50">
-        <DotsThree size={20} color="#fff" />
+      <TouchableOpacity className="p-2 rounded-full bg-border">
+        <DotsThree size={20} color="#fff" weight={"bold"} />
       </TouchableOpacity>
     </View>
   );

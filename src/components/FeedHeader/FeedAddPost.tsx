@@ -46,7 +46,7 @@ const FeedAddPost = () => {
 
   return (
     <View className={"px-2"}>
-      <View className="flex-1 bg-gray-800/90 rounded-lg">
+      <View className="flex-1 bg-border rounded-lg">
         {/* Post text input container */}
         <View className="p-4 flex-row justify-between">
           <TextInput
@@ -69,7 +69,7 @@ const FeedAddPost = () => {
                 setImage(null);
               }}
             >
-              <Text className="text-blue-500 font-bold">cancel</Text>
+              <Text className="text-blue font-bold">cancel</Text>
             </Pressable>
           ) : null}
         </View>

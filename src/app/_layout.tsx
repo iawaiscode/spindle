@@ -38,7 +38,13 @@ const RootLayout = () => {
     ...DarkTheme,
     colors: {
       ...DarkTheme.colors,
-      primary: "white",
+      background: "#1e1e1e",
+      primary: "#6e798c",
+      card: "#252525",
+      text: "white",
+      border: "#2d2d2d",
+      green: "#22c55e",
+      blue: "#3b82f6",
     },
   };
 

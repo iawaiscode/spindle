@@ -29,7 +29,7 @@ export const PostBody = ({ body, image }: { body: string; image: string }) => {
       >
         <TouchableOpacity
           activeOpacity={1}
-          className="flex-1 bg-black/90 justify-center items-center p-4"
+          className="flex-1 bg-black justify-center items-center p-4"
           onPress={toggleImageFullscreen}
         >
           <Image

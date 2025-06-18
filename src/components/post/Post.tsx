@@ -15,7 +15,7 @@ export const Post = ({ item: post }: { item: PostProps }) => {
 
   return (
     <View className={"p-2"}>
-      <View className="bg-gray-900/90 p-2 rounded-lg">
+      <View className="bg-card p-2 rounded-lg">
         <View className="flex-row items-start">
           <View className="mr-4">
             <Avatar image={user?.image} />

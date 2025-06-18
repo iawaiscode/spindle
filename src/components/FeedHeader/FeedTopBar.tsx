@@ -1,9 +1,11 @@
 import { Text, TouchableOpacity, View } from "react-native";
-import { ChatTeardropDots, Heart } from "phosphor-react-native";
+import { BookmarkSimple, ChatTeardropDots } from "phosphor-react-native";
 import { useRouter } from "expo-router";
+import { useTheme } from "@react-navigation/native";
 
 export const FeedTopBar = () => {
   const router = useRouter();
+  const { colors } = useTheme();
 
   return (
     <View className={"flex-row justify-between py-4 px-6"}>
@@ -13,15 +15,15 @@ export const FeedTopBar = () => {
           onPress={() => {
             router.push("/savedPosts");
           }}
-          className={"p-2 bg-gray-800 rounded-md"}
+          className={"p-2 bg-card rounded-full"}
         >
-          <Heart size={20} color="white" />
+          <BookmarkSimple size={20} color="white" />
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
             router.push("/chat");
           }}
-          className={"p-2 bg-gray-800 rounded-md"}
+          className={"p-2 bg-card rounded-full"}
         >
           <ChatTeardropDots size={20} color="white" />
         </TouchableOpacity>
